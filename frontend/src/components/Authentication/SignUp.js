@@ -48,7 +48,7 @@ const SignUp = () => {
 
       const formData = new FormData();
       formData.append("file", pics);
-      formData.append("upload_preset", "chat-app");
+      formData.append("upload_preset", "ChatApp");
 
       // Upload image using Cloudinary's upload method
       cloudinary.uploader.upload(formData, (err, result) => {
