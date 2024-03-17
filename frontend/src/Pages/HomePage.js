@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Container,
@@ -11,18 +11,27 @@ import {
 } from "@chakra-ui/react";
 import Login from "../components/Authentication/Login.js";
 import SignUp from "../components/Authentication/SignUp.js";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (user) navigate("/chats");
+  }, [navigate]);
+
   return (
     <Container maxW="xl" centerContent>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="center"
         textAlign="center"
-        bg={"white"}
-        p={3}
-        w="100%"
-        m="40px 0 15px 0"
+        background={"white"}
+        padding={3}
+        width="100%"
+        margin="40px 0 15px 0"
         borderRadius="1g"
         borderWidth="1px"
       >
