@@ -28,6 +28,7 @@ const ChatProvider = ({ children }) => {
         chats,
         setChats,
         selectedChat,
+        setSelectedChat,
       }}
     >
       {children}
